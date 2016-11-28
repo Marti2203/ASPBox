@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D4A2F771-FB32-43C6-8153-7B47C107961B}</ProjectGuid>
+    <ProjectGuid>{BA92E7BB-247B-42C0-92AF-FFE024EA9B1D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -150,10 +158,9 @@
     </Compile>
     <Compile Include="Models\BoxModel.cs" />
     <Compile Include="Models\BoxModelHack.cs" />
-    <Compile Include="Models\Utilities\Gender.cs" />
-    <Compile Include="Models\Utilities\SelectListItemFactory.cs" />
-    <Compile Include="Models\Utilities\SingletonBoxList.cs" />
-    <Compile Include="Models\SingletonBoxModel.cs" />
+    <Compile Include="Models\Utillities\Gender.cs" />
+    <Compile Include="Models\Utillities\SelectListItemFactory.cs" />
+    <Compile Include="Models\Utillities\SingletonBoxList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +201,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ATP\Create.cshtml" />
+    <Content Include="Views\ATP\Edit.cshtml" />
+    <Content Include="Views\ATP\List.cshtml" />
+    <Content Include="Views\ATP\RequestBox.cshtml" />
+    <Content Include="Views\Box\Create.cshtml" />
+    <Content Include="Views\Box\Edit.cshtml" />
+    <Content Include="Views\Box\List.cshtml" />
+    <Content Include="Views\Box\RequestBox.cshtml" />
+    <Content Include="Views\BoxHack\Create.cshtml" />
+    <Content Include="Views\BoxHack\Edit.cshtml" />
+    <Content Include="Views\BoxHack\List.cshtml" />
+    <Content Include="Views\BoxHack\RequestBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -213,6 +232,16 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BoxApp-Old\CommonFiles\BoxApp.CommonFiles.csproj">
+      <Project>{bcda9a16-119a-47d5-a175-e2b108414e64}</Project>
+      <Name>BoxApp.CommonFiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BoxApp-Old\Infrastructure\BoxApp.Infrastructure.csproj">
+      <Project>{49c43a3f-4caa-450f-9ef3-a71088b8fa1d}</Project>
+      <Name>BoxApp.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -229,9 +258,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62647</DevelopmentServerPort>
+          <DevelopmentServerPort>49610</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62647/</IISUrl>
+          <IISUrl>http://localhost:49610/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Reflection;
 using System.Web.Mvc;
-using TestApp.Models;
+using BoxApp.Models;
 
-namespace TestApp.Controllers
+namespace BoxApp.Controllers
 {
     public class ATPController : Controller
     {
-        private IList<SingletonBoxModel> _models;//The "database" for the boxes
+        private IList<BoxModel> _models;//The "database" for the boxes
 
         public ATPController()
         {
@@ -28,7 +28,7 @@ namespace TestApp.Controllers
         //Create a new Box Model if the previous session had created one and show page for Box Creation
         public ActionResult Create()
         {
-            SingletonBoxModel viewModel = (SingletonBoxModel)TempData["viewModel"] ?? new SingletonBoxModel();
+            BoxModel viewModel = (BoxModel)TempData["viewModel"] ?? new BoxModel();
 
             return View(viewModel);
         }
@@ -49,17 +49,17 @@ namespace TestApp.Controllers
         //Edit information of a specified by id box
         public ActionResult Edit(string id)
         {
-            SingletonBoxModel model = _models.Where(element => element.ID == id).FirstOrDefault();//Find box if there exists one
+            BoxModel model = _models.Where(element => element.ID == id).FirstOrDefault();//Find box if there exists one
             return View(model);
         }
 
         [HttpPost]
-        //Edit box with a specified SingletonBoxModel
-        public ActionResult Edit(SingletonBoxModel viewModel)
+        //Edit box with a specified BoxModel
+        public ActionResult Edit(BoxModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                SingletonBoxModel old = _models.Where(model => model.ID == viewModel.ID).FirstOrDefault();
+                BoxModel old = _models.Where(model => model.ID == viewModel.ID).FirstOrDefault();
                 foreach (PropertyInfo property in old.GetType().GetProperties())
                 {
                     property.SetValue(old, property.GetValue(viewModel));
@@ -73,7 +73,7 @@ namespace TestApp.Controllers
 
         [HttpPost]
         //Output information of created box
-        public ActionResult RequestBox(SingletonBoxModel viewModel)
+        public ActionResult RequestBox(BoxModel viewModel)
         {
             //Show a view consisting of the fields of the box
             if (ModelState.IsValid)

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace TestApp.Models
+namespace BoxApp.Models
 {
     public static class SelectListItemFactory
     {

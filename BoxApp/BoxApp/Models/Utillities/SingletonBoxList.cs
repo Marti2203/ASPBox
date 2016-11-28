@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TestApp.Models
+namespace BoxApp.Models
 {
     public class SingletonBoxList
     {
-        private static IList<SingletonBoxModel> models;
+        private static IList<BoxModel> models;
         private SingletonBoxList() { }
-        public static IList<SingletonBoxModel> Models
+        public static IList<BoxModel> Models
         {
             get
             {
                 if (models == null)
                 {
-                    models = new List<SingletonBoxModel>();
-                    models.Add(new SingletonBoxModel
+                    models = new List<BoxModel>();
+                    models.Add(new BoxModel
                     {
                         Colour = "Blue",
                         Height = 12,
@@ -25,7 +25,7 @@ namespace TestApp.Models
                         Weight = 123,
                         Width = 555
                     });
-                    models.Add(new SingletonBoxModel
+                    models.Add(new BoxModel
                     {
                         Colour = "Red",
                         Height = 12,

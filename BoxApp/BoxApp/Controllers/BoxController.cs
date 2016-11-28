@@ -1,13 +1,13 @@
-﻿using CommonFiles.DTO;
+﻿using BoxApp.CommonFiles.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
-using TestApp.Models;
-using Infrastructure;
-namespace TestApp.Controllers
+using BoxApp.Models;
+using BoxApp.Infrastructure;
+namespace BoxApp.Controllers
 {
     public class BoxController : Controller
     {

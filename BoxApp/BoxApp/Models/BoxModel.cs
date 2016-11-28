@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using CommonFiles.Resource;
-namespace TestApp.Models
+using BoxApp.CommonFiles.Resource;
+namespace BoxApp.Models
 {
     public class BoxModel
     {
@@ -14,6 +14,11 @@ namespace TestApp.Models
         [MaxLength(30, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ErrorResources))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ErrorResources))]
         public string Colour { get; set; }
+
+        [Display(Name = "Material", ResourceType = typeof(BoxResources))]
+        [MaxLength(30, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ErrorResources))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ErrorResources))]
+        public string Material { get; set; }
 
         [Display(Name = "Height", ResourceType = typeof(BoxResources))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ErrorResources))]
@@ -26,11 +31,6 @@ namespace TestApp.Models
         [Display(Name = "Length", ResourceType = typeof(BoxResources))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ErrorResources))]
         public decimal? Length { get; set; }
-
-        [Display(Name = "Material", ResourceType = typeof(BoxResources))]
-        [MaxLength(30, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ErrorResources))]
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ErrorResources))]
-        public string Material { get; set; }
 
         [Display(Name = "Weight", ResourceType = typeof(BoxResources))]
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ErrorResources))]

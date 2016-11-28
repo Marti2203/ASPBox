@@ -1,11 +1,11 @@
-﻿using CommonFiles.Resource;
+﻿using BoxApp.CommonFiles.Resource;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace TestApp.Models
+namespace BoxApp.Models
 {
     public class BoxModelHack
     {

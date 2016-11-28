@@ -1,4 +1,4 @@
-﻿namespace TestApp.Models
+﻿namespace BoxApp.Models
 {
 
     public enum Gender
