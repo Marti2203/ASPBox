@@ -7,16 +7,16 @@ namespace BoxApp.Models
 {
     public class SingletonBoxList
     {
-        private static IList<BoxModel> models;
+        private static IList<BoxModelHack> models;
         private SingletonBoxList() { }
-        public static IList<BoxModel> Models
+        public static IList<BoxModelHack> Models
         {
             get
             {
                 if (models == null)
                 {
-                    models = new List<BoxModel>();
-                    models.Add(new BoxModel
+                    models = new List<BoxModelHack>();
+                    models.Add(new BoxModelHack
                     {
                         Colour = "Blue",
                         Height = 12,
@@ -25,7 +25,7 @@ namespace BoxApp.Models
                         Weight = 123,
                         Width = 555
                     });
-                    models.Add(new BoxModel
+                    models.Add(new BoxModelHack
                     {
                         Colour = "Red",
                         Height = 12,

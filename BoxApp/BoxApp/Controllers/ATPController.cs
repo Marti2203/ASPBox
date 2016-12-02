@@ -10,7 +10,7 @@ namespace BoxApp.Controllers
 {
     public class ATPController : Controller
     {
-        private IList<BoxModel> _models;//The "database" for the boxes
+        private IList<BoxModelHack> _models;//The "database" for the boxes
 
         public ATPController()
         {
@@ -28,7 +28,7 @@ namespace BoxApp.Controllers
         //Create a new Box Model if the previous session had created one and show page for Box Creation
         public ActionResult Create()
         {
-            BoxModel viewModel = (BoxModel)TempData["viewModel"] ?? new BoxModel();
+            BoxModelHack viewModel = (BoxModelHack)TempData["viewModel"] ?? new BoxModelHack();
 
             return View(viewModel);
         }
@@ -49,17 +49,17 @@ namespace BoxApp.Controllers
         //Edit information of a specified by id box
         public ActionResult Edit(string id)
         {
-            BoxModel model = _models.Where(element => element.ID == id).FirstOrDefault();//Find box if there exists one
+            BoxModelHack model = _models.Where(element => element.ID == id).FirstOrDefault();//Find box if there exists one
             return View(model);
         }
 
         [HttpPost]
-        //Edit box with a specified BoxModel
-        public ActionResult Edit(BoxModel viewModel)
+        //Edit box with a specified BoxModelHack
+        public ActionResult Edit(BoxModelHack viewModel)
         {
             if (ModelState.IsValid)
             {
-                BoxModel old = _models.Where(model => model.ID == viewModel.ID).FirstOrDefault();
+                BoxModelHack old = _models.Where(model => model.ID == viewModel.ID).FirstOrDefault();
                 foreach (PropertyInfo property in old.GetType().GetProperties())
                 {
                     property.SetValue(old, property.GetValue(viewModel));
@@ -73,7 +73,7 @@ namespace BoxApp.Controllers
 
         [HttpPost]
         //Output information of created box
-        public ActionResult RequestBox(BoxModel viewModel)
+        public ActionResult RequestBox(BoxModelHack viewModel)
         {
             //Show a view consisting of the fields of the box
             if (ModelState.IsValid)
