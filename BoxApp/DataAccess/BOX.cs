@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserApp.DataAccess
+namespace BoxApp.DataAccess
 {
     using System;
     using System.Collections.Generic;

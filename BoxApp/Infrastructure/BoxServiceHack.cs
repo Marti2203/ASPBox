@@ -1,5 +1,5 @@
-﻿using UserApp.CommonFiles.DTO;
-using UserApp.DataAccess;
+﻿using BoxApp.CommonFiles.DTO;
+using BoxApp.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserApp.Infrastructure
+namespace BoxApp.Infrastructure
 {    
     //Service for communication between the Database and the Controller
     public class BoxServiceHack

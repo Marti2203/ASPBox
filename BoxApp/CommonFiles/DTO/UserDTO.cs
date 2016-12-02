@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserApp.CommonFiles.DTO
+namespace BoxApp.CommonFiles.DTO
 {
     //DataTransferObject- Intermediary object between Model and Database Object
     public class UserDTO

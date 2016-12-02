@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserApp.CommonFiles.Resource {
+namespace BoxApp.CommonFiles.Resource {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace UserApp.CommonFiles.Resource {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UserApp.CommonFiles.Resource.BoxResources", typeof(BoxResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BoxApp.CommonFiles.Resource.BoxResources", typeof(BoxResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

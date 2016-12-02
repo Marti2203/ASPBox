@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserApp.DataAccess
+namespace BoxApp.DataAccess
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class USER_NEW_NEW
     {
         public int ID { get; set; }
         public string USERNAME { get; set; }
         public string PASSWORD { get; set; }
-        public string EMAIL { get; set; }
-        public string GENDER { get; set; }
         public string ABOUT { get; set; }
+        public string GENDER { get; set; }
+        public string EMAIL { get; set; }
         public string SECRET_Q { get; set; }
         public string SECRET_A { get; set; }
     }
