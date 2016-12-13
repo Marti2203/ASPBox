@@ -10,7 +10,7 @@ using System.Reflection;
 namespace BoxApp.Infrastructure
 {
     //Service for communication between the Database and the Controller
-    public class BoxService
+    public class BoxService : IBoxService
     {
         public void Insert(BoxDTO box)
         {

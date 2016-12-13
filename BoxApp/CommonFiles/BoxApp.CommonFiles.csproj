@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BoxApp.CommonFiles</RootNamespace>
     <AssemblyName>BoxApp.CommonFiles</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\BoxDTO.cs" />
-    <Compile Include="DTO\BoxDTOHack.cs" />
+    <Compile Include="DTO\DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\BoxResources.Designer.cs">
       <AutoGen>True</AutoGen>

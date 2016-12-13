@@ -10,7 +10,7 @@ namespace BoxApp.Controllers
 {
     public class ATPController : Controller
     {
-        private IList<BoxModelHack> _models;//The "database" for the boxes
+        private IList<BoxModel> _models;//The "database" for the boxes
 
         public ATPController()
         {
@@ -28,7 +28,7 @@ namespace BoxApp.Controllers
         //Create a new Box Model if the previous session had created one and show page for Box Creation
         public ActionResult Create()
         {
-            BoxModelHack viewModel = (BoxModelHack)TempData["viewModel"] ?? new BoxModelHack();
+            BoxModel viewModel = (BoxModel)TempData["viewModel"] ?? new BoxModel();
 
             return View(viewModel);
         }
@@ -40,26 +40,26 @@ namespace BoxApp.Controllers
             return View(_models);
         }
         //Delete a box with the specified id
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             _models.Remove(_models.Where(box => box.ID == id).FirstOrDefault());//Find box if there exists one
             return RedirectToAction("List");
         }
 
         //Edit information of a specified by id box
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            BoxModelHack model = _models.Where(element => element.ID == id).FirstOrDefault();//Find box if there exists one
+            BoxModel model = _models.Where(element => element.ID == id).FirstOrDefault();//Find box if there exists one
             return View(model);
         }
 
         [HttpPost]
-        //Edit box with a specified BoxModelHack
-        public ActionResult Edit(BoxModelHack viewModel)
+        //Edit box with a specified BoxModel
+        public ActionResult Edit(BoxModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                BoxModelHack old = _models.Where(model => model.ID == viewModel.ID).FirstOrDefault();
+                BoxModel old = _models.Where(model => model.ID == viewModel.ID).FirstOrDefault();
                 foreach (PropertyInfo property in old.GetType().GetProperties())
                 {
                     property.SetValue(old, property.GetValue(viewModel));
@@ -73,7 +73,7 @@ namespace BoxApp.Controllers
 
         [HttpPost]
         //Output information of created box
-        public ActionResult RequestBox(BoxModelHack viewModel)
+        public ActionResult RequestBox(BoxModel viewModel)
         {
             //Show a view consisting of the fields of the box
             if (ModelState.IsValid)
@@ -82,6 +82,7 @@ namespace BoxApp.Controllers
                 , viewModel.Width, viewModel.Height, viewModel.Length, viewModel.Weight, viewModel.Colour, viewModel.Material);
 
                 ViewBag.SuccessMessage = message;
+                viewModel.ID = _models.Last().ID+1;
                 _models.Add(viewModel);
                 Session["models"] = _models;
                 return View();

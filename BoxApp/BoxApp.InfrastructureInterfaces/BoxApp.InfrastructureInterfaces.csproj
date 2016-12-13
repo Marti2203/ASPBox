@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AFA89F13-AA6D-4FF6-AC62-EA6D72E11FF5}</ProjectGuid>
+    <ProjectGuid>{BCA2CCFA-9281-4F3A-AA12-056E898B29F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BoxApp.Infrastructure</RootNamespace>
-    <AssemblyName>BoxApp.Infrastructure</AssemblyName>
+    <RootNamespace>BoxApp.InfrastructureInterfaces</RootNamespace>
+    <AssemblyName>BoxApp.InfrastructureInterfaces</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,29 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoxService.cs" />
+    <Compile Include="IBoxService.cs" />
+    <Compile Include="IDefaultService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BoxApp.InfrastructureInterfaces\BoxApp.InfrastructureInterfaces.csproj">
-      <Project>{bca2ccfa-9281-4f3a-aa12-056e898b29f9}</Project>
-      <Name>BoxApp.InfrastructureInterfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CommonFiles\BoxApp.CommonFiles.csproj">
-      <Project>{6e095cb5-1375-4a4d-b3e0-f0cf6b293341}</Project>
+      <Project>{6E095CB5-1375-4A4D-B3E0-F0CF6B293341}</Project>
       <Name>BoxApp.CommonFiles</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccess\BoxApp.DataAccess.csproj">
-      <Project>{a2e9834b-d56f-4ae9-ba15-9ed45dbfba98}</Project>
-      <Name>BoxApp.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

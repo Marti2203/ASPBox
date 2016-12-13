@@ -1,8 +1,6 @@
 ﻿@model BoxApp.Models.BoxModel
-@{
-    {
-        ViewBag.Title = BoxApp.CommonFiles.Resource.BoxResources.EditPageName;
-    }
+@{ViewBag.Title = BoxApp.CommonFiles.Resource.BoxResources.EditPageName; }
+
 <h2>@BoxApp.CommonFiles.Resource.BoxResources.EditPageName</h2>
 @using (Html.BeginForm("Edit", "Box", FormMethod.Post))
 {

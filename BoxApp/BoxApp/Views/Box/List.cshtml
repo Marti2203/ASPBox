@@ -11,7 +11,7 @@
     <thead>
         <tr>
             <th></th>
-            @foreach (PropertyInfo property in typeof(BoxModelHack).GetProperties().Where(property => property.Name != "ID"))
+            @foreach (PropertyInfo property in typeof(BoxModel).GetProperties().Where(property => property.Name != "ID"))
             {
                 <th>
                     @typeof(BoxResources).GetProperty(property.Name).GetMethod.Invoke(null, null)
